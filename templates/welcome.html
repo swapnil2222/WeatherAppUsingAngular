@@ -1,0 +1,31 @@
+<div style="height:100%;background:url('img/welcome-bg.png') bottom no-repeat;background-size: cover;" >
+		<br><br>
+	<!-- <h1 style="font-family: 'Roboto Slab', serif;">Welcome to Weather Forecast App</h1> -->
+	<br><br><br><br>
+		
+	<form class="form-horizontal" name="signupForm" ng-submit="WelcomeScreenCtrl.loginUser()" role="form">
+	<div class="col-md-offset-4 col-md-4">
+	<h3 style="font-family: 'Roboto Slab', serif">&nbsp;&nbsp;&nbsp;&nbsp;Login</h3>
+	</div>
+
+		<div class="form-group" >
+			<label for="inputUsername" class="control-label col-md-2 col-md-offset-3">Username</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" placeholder="enter username" id ="username" name="userName" ng-model="WelcomeScreenCtrl.loginInfo.userName" required /></div> 
+			</div>
+			<div class="form-group">
+			<label for="inputPassword" class="control-label col-md-2 col-md-offset-3">Password</label>
+				<div class="col-md-3">
+					<input type="password" class="form-control" placeholder="enter Password" id ="password" name="password" ng-model="WelcomeScreenCtrl.loginInfo.password" required /></div> 
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-4 col-md-5">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</form>
+			<div class="col-md-offset-4 col-md-5">
+			<span class="h4" style="font-family: 'Roboto Slab', serif;color: #fff;">New User?</span>
+			<a class="h4" style="font-family: 'Roboto Slab', serif;color: #fff;"  ui-sref="SignUp"> Click to SignUp</a>
+			</div>
+		</div>

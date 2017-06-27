@@ -1,0 +1,70 @@
+<div style="height:100%;background:url('img/banner-bg.png') bottom no-repeat;background-size: cover;margin-top: -15px; margin-bottom: 0px;"><br><br><br><br>
+	<div class="thumbnail col-md-4 col-md-offset-4">
+
+		<div class="caption">
+			<h1 style="font-family: 'Roboto Slab', serif;">Hello {{username}}</h1>
+			<h3 style="font-family: 'Roboto Slab', serif;">Welcome to Weather Forecast App.</h3>
+			<div ng-show="showLocation" id="showWeatherInfo">
+				<reverse-geocode lat="{{ latitude }}" lng="{{ longitude }}" place-address="placeAddress
+				"></reverse-geocode>
+				<br>
+				<a ui-sref="showWeather" class="btn btn-primary">Show WeatherInfo</a>
+				<button class="btn btn-primary" ng-click="showLocation=false">Back</button>
+			</div>
+			<div ng-show="showPlace">
+				{{place.formatted_address}}
+				<br><br>
+				<a ui-sref="showWeather" class="btn btn-primary">Show WeatherInfo</a>
+				
+			</div>
+			<div ng-hide="showLocation" class="showLocation">
+
+				<form class="form-horizontal" ng-submit="getLocation()" role="form" >
+					<span class="h3" style="font-family: 'Roboto Slab', serif;">Add Your City /Access Location</span>
+					<br><br>
+					<input type="text" name="city" class="form-control" g-places-autocomplete ng-model="place" placeholder="Enter your city" required><br>
+					<div class="col-md-4 col-md-offset-3">
+					<button type="submit" class="btn btn-default btn-block" ng-click="showPlace=true">OK</button>
+					</div>		
+				</form>
+
+				<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">Use GPS</button>
+
+				<!-- <pre>{{place | json}}</pre> -->
+
+				<!-- <reverse-geocode lat="40.730885" lng="-73.997383"></reverse-geocode> -->
+
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog modal-sm">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+        <!-- <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+    -->
+
+
+
+    <div class="modal-body">
+
+
+    	<button type="button" class="btn btn-primary" ng-click="showLocation=true" data-dismiss="modal" >Get Location</button>
+
+    </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+        </div>
+    -->   
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>

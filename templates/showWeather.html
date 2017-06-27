@@ -1,0 +1,85 @@
+<div style="height:100%;background:url('img/banner-bg.png') bottom center repeat-y;background-size: cover;margin-top:-20px; margin-bottom: -20px;">
+	
+	<div class="thumnail" style="padding-top: 20px;">
+			<h3 style="font-family: 'Roboto Slab', serif;">
+			{{data.city.name}}, {{data.city.country}}</h3>
+
+			 <h4 style="font-family: 'Roboto Slab', serif;">Lat:{{data.city.coord.lat}}, Lon:{{data.city.coord.lon}}</h4>
+
+		<div class="caption" style="padding-top: 100px;">
+
+
+			<div class="col-md-4 ">
+				<div class="panel panel-primary" style="color: #000;text-align: left;">
+					<div class="panel-heading"><strong>Today</strong> {{data.list[0].dt_txt | date:'fullDate'}}</div>
+					<div class="panel-body">
+						<span class="h3">
+							<img ng-src="http://openweathermap.org/img/w/{{data.list[0].weather[0].icon}}.png "/>
+							{{data.list[0].main.temp}}&#176;C
+						</span>
+						<p>
+							{{data.list[0].weather[0].description}}&nbsp;&#126;&nbsp;
+							High: {{data.list[0].main.temp_max}}&#176;C&nbsp;&#126;&nbsp;
+							Low: {{data.list[0].main.temp_min}}&#176;C
+						</p>
+					</div>
+					<div class="panel-footer">
+						<small>
+							Day:{{data.list[0].main.temp_max}}&#176;C&nbsp;&#126;&nbsp;
+							Night:{{data.list[0].main.temp_min}}&#176;C&nbsp;&#126;&nbsp;
+							Pressure:{{data.list[0].main.pressure}} hPa&nbsp;&#126;&nbsp;
+							Humidity:{{data.list[0].main.humidity}}%
+						</small>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 ">
+				<div class="panel panel-primary" style="color: #000;text-align: left;">
+					<div class="panel-heading"><strong>Tommorow</strong> {{data.list[4].dt_txt | date:'fullDate'}}</div>
+					<div class="panel-body">
+						<span class="h3">
+							<img ng-src="http://openweathermap.org/img/w/{{data.list[4].weather[0].icon}}.png "/>
+							{{data.list[4].main.temp}}&#176;C</span>
+							<p>
+								{{data.list[4].weather[0].description}}&nbsp;&#126;&nbsp;
+								High: {{data.list[4].main.temp_max}}&#176;C&nbsp;&#126;&nbsp;
+								Low: {{data.list[4].main.temp_min}}&#176;C
+							</p>
+						</div>
+						<div class="panel-footer">
+							<small>
+							Day:{{data.list[4].main.temp_max}}&#176;C&nbsp;&#126;&nbsp;
+							Night:{{data.list[4].main.temp_min}}&#176;C&nbsp;&#126;&nbsp;
+							Pressure:{{data.list[4].main.pressure}} hPa&nbsp;&#126;&nbsp;
+							Humidity:{{data.list[4].main.humidity}}%
+						</small>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-primary" style="color: #000;text-align: left;">
+						<div class="panel-heading"><strong>Day After </strong> {{data.list[16].dt_txt | date:'fullDate'}}</div>
+						<div class="panel-body">
+							<span class="h3">
+								<img ng-src="http://openweathermap.org/img/w/{{data.list[16].weather[0].icon}}.png "/>
+								{{data.list[16].main.temp}}&#176;C</span>
+								<p>
+									{{data.list[16].weather[0].description}}&nbsp;&#126;&nbsp;
+									High: {{data.list[16].main.temp_max}}&#176;C&nbsp;&#126;&nbsp;
+									Low: {{data.list[16].main.temp_min}}&#176;C
+								</p>
+							</div>
+							<div class="panel-footer">
+								<small>
+							Day:{{data.list[16].main.temp_max}}&#176;C&nbsp;&#126;&nbsp;
+							Night:{{data.list[16].main.temp_min}}&#176;C&nbsp;&#126;&nbsp;
+							Pressure:{{data.list[16].main.pressure}} hPa&nbsp;&#126;&nbsp;
+							Humidity:{{data.list[16].main.humidity}}%
+						</small>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
